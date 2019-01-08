@@ -23,7 +23,7 @@ import {
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
-@NgModule({
+@NgModule({ 
   imports: [
   BrowserModule,
   IonicModule.forRoot(),
