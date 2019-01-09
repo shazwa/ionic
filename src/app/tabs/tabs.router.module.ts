@@ -3,48 +3,62 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
 
+import { HomePage } from '../home/home.page';
+import { AddPage } from '../add/add.page';
+import { EditPage } from '../edit/edit.page';
+import { DetailsPage } from '../details/details.page';
+
 const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'home',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../home/home.module#HomePageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'add',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../add/add.module#AddPageModule'
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'edit',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../edit/edit.module#EditPageModule'
+          }
+        ]
+      },
+      {
+        path: 'details',
+        children: [
+          {
+            path: '',
+            loadChildren: '../details/details.module#DetailsPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];
